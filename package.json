@@ -9,6 +9,7 @@
   "author": "Casiano Rodriguez-Leon <casiano.rodriguez.leon@gmail.com> (https://github.com/crguezl)",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.2",
     "gulp-shell": "^0.6.3"
   }
 }
