@@ -1,10 +1,12 @@
-var https = require('https');
+var http = require('http');
+//var https = require('https');
 
 //The url we want is: 
 // https://www.random.org/integers/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new
 var options = {
-  host: 'www.random.org',
-  path: '/integers/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new'
+  host: 'localhost',
+  port: '8080',
+  path: '/chuchu/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new'
 };
 
 callback = function(response) {
@@ -22,4 +24,4 @@ callback = function(response) {
   });
 }
 
-https.request(options, callback).end();
+http.request(options, callback).end();

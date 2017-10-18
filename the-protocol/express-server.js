@@ -5,11 +5,6 @@ var util = require('util');
 // https://nodejs.org/api/path.html
 var path = require('path');
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-// set the view engine to ejs
-app.set('view engine', 'ejs'); // http://expressjs.com/api.html#app.set
-
 // Serve static files
 app.use(express.static('.')); // http://expressjs.com/api.html#app.use#
 
@@ -33,11 +28,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // A browser's default method is 'GET', so this
 // is the route that express uses when we visit
 // our site initially.
-app.get('/', function(req, res){
-  // The form's action is '/' and its method is 'POST',
-  // so the `app.post('/', ...` route will receive the
-  // result of our form
-  res.render('index', { title: "CSV"});
+app.get('/chuchu', function(req, res){
+  console.log(req.query);
+  let result = Object.assign(req.query, {result: 99});
+  res.send(result);
 });
 
 // This route receives the posted form.
