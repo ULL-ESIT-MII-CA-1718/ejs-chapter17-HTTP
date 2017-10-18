@@ -40,6 +40,7 @@ app.get('/chuchu', function(req, res){
 app.post('/', function(req, res){
   var msg = req.body.msg;
   console.log("MSG = "+msg);
+  // res.header sets the response’s HTTP header field to value. 
   res.header({
     chuchu: 'tutu',
     "subject":"Computación Avanzada 17/18"
