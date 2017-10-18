@@ -40,6 +40,10 @@ app.get('/chuchu', function(req, res){
 app.post('/', function(req, res){
   var msg = req.body.msg;
   console.log("MSG = "+msg);
+  res.header({
+    chuchu: 'tutu',
+    "subject":"Computación Avanzada 17/18"
+  });
   var result = 8;
   res.send({msg: result});
 });

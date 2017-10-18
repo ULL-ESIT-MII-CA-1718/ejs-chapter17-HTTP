@@ -1,9 +1,13 @@
 var http = require('http');
-//var https = require('https');
 
-//The url we want is: 
-// https://www.random.org/integers/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new
 var options = {
+	/* For the most part, a client or server decides which headers to
+	include in a request or response, though a few headers are required.
+	For example, the Host header, which specifies the hostname, should
+	be included in a request because a server might be serving multiple
+	hostnames on a single IP address, and without that header, the
+	server won’t know which host the client is trying to talk to.
+	*/
   host: 'localhost',
   port: '8080',
   path: '/chuchu/?num=1&min=1&max=10&col=1&base=10&format=plain&rnd=new'

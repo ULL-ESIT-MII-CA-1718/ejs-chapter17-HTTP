@@ -5,11 +5,25 @@ const postData = querystring.stringify({
   'msg': 'Hello World!'
 });
 
+
 var options = {
   host: 'localhost',
   path: '/',
   port: '8080',
   method: 'POST',
+  /*
+  The first line of a request or response may be followed by any
+  number of headers. These are lines in the form 
+
+  "name: value" 
+
+  that specify extra information about the request or response. These
+  headers were part of the example response:
+
+  Content-Length: 65585
+  Content-Type: text/html
+  Last-Modified: Wed, 09 Apr 2014 10:48:09 GM
+  */
   headers: {
     'Content-Type': 'application/x-www-form-urlencoded',
     'Content-Length': Buffer.byteLength(postData)
