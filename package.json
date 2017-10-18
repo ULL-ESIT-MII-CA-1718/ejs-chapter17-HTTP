@@ -9,7 +9,9 @@
   "author": "Casiano Rodriguez-Leon <casiano.rodriguez.leon@gmail.com> (https://github.com/crguezl)",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "express-ejs-layouts": "^2.3.1",
     "gulp-shell": "^0.6.3"
   }
 }
