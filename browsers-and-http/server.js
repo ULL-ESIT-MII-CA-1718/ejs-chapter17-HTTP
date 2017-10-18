@@ -54,6 +54,13 @@ app.get('/example/message.html', function(req, res){
   res.render('response', context);
 });
 
+app.post('/example/message.html', function(req, res){
+  console.log("req.body = " + util.inspect(req.body));
+  let context = {};
+  Object.assign(context, req.body, {title: "EJS. Chapter 17: HTTP. Browsers and HTTP"})
+  res.render('response', context);
+});
+
 app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'));
 });

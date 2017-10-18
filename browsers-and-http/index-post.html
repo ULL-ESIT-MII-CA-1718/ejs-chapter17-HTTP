@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <form method="POST" action="example/message.html">
+    <p>Name: <input type="text" name="name"></p>
+    <p>Message:<br><textarea name="message"></textarea></p>
+    <p><button type="submit">Send</button></p>
+  </form>  
+  <!--
+    This code describes a form with two fields: a small one asking
+    for a name and a larger one to write a message in. 
+    
+    When you click the Send button, the information in those fields will be
+    encoded into a query string. 
+    
+    When the <form> element’s method attribute is GET (or is omitted), 
+    that query string is tacked onto the action URL, and the browser 
+    makes a GET request to that URL.
+
+    GET /example/message.html?name=Jean&message=Yes%3F HTTP/1.1 
+    
+    The start of a query string is indicated by a question mark. 
+    
+    After that follow pairs of names and values, corresponding to the
+    name attribute on the form field elements and the content of
+    those elements, respectively. 
+    
+    An ampersand character (&) is used to separate the pairs.
+
+    The actual message encoded in the previous URL is "Yes?", even
+    though the question mark is replaced by a strange code. 
+    
+    Some characters in query strings must be escaped. The question mark,
+    represented as %3F, is one of those. 
+    
+    There seems to be an unwritten rule that every format needs its own way of escaping
+    characters. This one, called URL encoding, uses a percent sign
+    followed by two hexadecimal digits that encode the character
+    code. In this case, 3F, which is 63 in decimal notation, is the
+    code of a question mark character.
+  -->
+</body>
+</html>
