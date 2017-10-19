@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <h2>Using the XMLHttpRequest Object</h2>
+
+  <div id="demo">
+  <button type="button" onclick="loadXMLDoc()">Change Content</button>
+  </div>
+
+  <script>
+  function loadXMLDoc() {
+    var xhttp = new XMLHttpRequest();
+    /* 
+       The onreadystatechange property specifies a function to be
+       executed every time the status of the XMLHttpRequest object changes
+    */
+    xhttp.onreadystatechange = function() {
+
+    /* 
+        The XMLHttpRequest.readyState property
+        returns the state an XMLHttpRequest client
+        is in. An XHR client exists in one of the
+        following states:
+
+        Value        State            Description
+          0         UNSENT              Client has been created. open() not called yet.
+          1         OPENED              open() has been called.
+          2         HEADERS_RECEIVED    send() has been called, and headers and status are available.
+          3         LOADING             Downloading; responseText holds partial data.
+          4         DONE                The operation is complete.
+    */
+      if (this.readyState == 4 && this.status == 200) {
+        /* 
+           La propiedad XMLHttpRequest.responseText  devuelve un
+           DOMString (DOMString is a UTF-16 String. As JavaScript
+           already uses such strings, DOMString is mapped directly
+           to a String) que contiene la  respuesta a la consulta como
+           un texto o null si la consulta  no tuvo exito o  aun no
+           ha sido completada.
+        */
+        document.getElementById("demo").innerHTML = this.responseText;
+      }
+    };
+    /* XMLHttpRequest.open(method, url, async, user, password) 
+     async Optional:
+       An optional Boolean parameter, defaulting to true, indicating
+       whether or not to perform the operation asynchronously. 
+       If this value is false, the send()method does not return until
+       the response is received. 
+       If true, notification of a completed transaction is provided
+       using event listeners. 
+     */
+
+    xhttp.open("GET", "xmlhttp_info.txt", true);
+    /*
+       Some frameworks use the header "X-Requested-With" to detect xhr requests
+       e.g. grails spring security is using this header to identify
+       xhr request and give either a json response or html response
+       as response.
+     */
+    xhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    /*
+       The XMLHttpRequest.send() method sends the request. If the
+       request is asynchronous (which is the default), this method
+       returns as soon as the request is sent. If the request is
+       synchronous, this method doesn't return until the response has
+       arrived. send() accepts an optional argument for the request
+       body. If the request method is GET or HEAD, the argument is
+       ignored and request body is set to null.
+    */
+    xhttp.send();
+  }
+  </script>
+
+</body>
+</html>
+
