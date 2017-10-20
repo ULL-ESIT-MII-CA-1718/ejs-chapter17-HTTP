@@ -13,12 +13,6 @@ app.use(expressLayouts);
 
 app.use(express.static(__dirname));
 
-/*
-app.get('/', (request, response) => {     
-  response.render('index', { title: 'CSV Analyzer' });
-});
-*/
-
 app.get("/xmlhttp_info.txt", (request, response) => {
   /* 
    *  A Boolean property that is true if the request’s X-Requested-With header field is “XMLHttpRequest

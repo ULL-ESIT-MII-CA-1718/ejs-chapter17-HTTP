@@ -12,16 +12,43 @@
   let loadXMLDoc = function() {
     var xhttp = new XMLHttpRequest();
  
-    /* XMLHttpRequest.open(method, url, async, user, password) 
+    /* XMLHttpRequest.open(method, URL, async, user, password) 
      async Optional:
        An optional Boolean parameter, defaulting to true, indicating
        whether or not to perform the operation asynchronously. 
        If this value is false, the send()method does not return until
        the response is received. 
+
+       URLs that don’t start with a protocol name (such as http:)
+       are relative, which means that they are interpreted relative
+       to the current document.
+
+       When they start with a slash (/), they replace the current
+       path, which is the part after the server name.
      */
 
-    xhttp.open("GET", "xmlhttp_info.txt", false);
+    xhttp.open("GET", "/chuchu/xmlhttp_info.txt", false);
+    /*
+       The XMLHttpRequest.setRequestHeader() method sets the value
+       of an HTTP request header.
+     */
     xhttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+    /*
+      If this method is called several times with the same header,
+      the values are merged into one single request header.
+
+      Header names are case-insensitive. They are usually written
+      with a capital letter at the start of each word, such as
+      “Content-Type”, but “content-type” and “cOnTeNt-TyPe” refer
+      to the same header.
+
+      The browser will automatically add some request headers, such
+      as "Host" and those needed for the server to figure out the
+      size of the body. But you can add your own headers with the
+      setRequestHeader method.
+    */
+    xhttp.setRequestHeader("Chuchu", "Tutu!");
+    xhttp.setRequestHeader("chuchu", "Chazam!");
     /*
        The XMLHttpRequest.send() method sends the request. If the
        request is asynchronous (which is the default), this method
@@ -34,6 +61,7 @@
     xhttp.send(null);
 
     if (xhttp.readyState == 4 && xhttp.status == 200) {
+      console.log(xhttp.statusText); // OK
       document.getElementById("demo").innerHTML = xhttp.responseText;
     }
   }

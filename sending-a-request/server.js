@@ -19,11 +19,12 @@ app.get('/', (request, response) => {
 });
 */
 
-app.get("/xmlhttp_info.txt", (request, response) => {
+app.get("/chuchu/xmlhttp_info.txt", (request, response) => {
+  console.log(`request.get('chuchu') = ${request.get('chuchu')}`);  // Tutu!, Chazam!
   /* 
    *  A Boolean property that is true if the request’s X-Requested-With header field is “XMLHttpRequest
    */
-  console.log(request.xhr); // true
+  console.log(`request.xhr = ${request.xhr}`); // true
   response.send("Response from server: <b>Hello client!</b>" );
 });
 
