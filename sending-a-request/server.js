@@ -25,6 +25,15 @@ app.get("/chuchu/xmlhttp_info.txt", (request, response) => {
    *  A Boolean property that is true if the request’s X-Requested-With header field is “XMLHttpRequest
    */
   console.log(`request.xhr = ${request.xhr}`); // true
+
+  /*
+   * res.append(field [, value]) 
+   * Appends the specified value to the HTTP response header field.
+   * If the header is not already set, it creates the header with the
+   * specified value. The value parameter can be a string or an array.
+   * Note: calling res.set() after res.append() will reset the previously-set header value.
+   */
+  response.append('MyServerSetHeader', 'Success is walking from failure to failure with no loss of enthusiasm');
   response.send("Response from server: <b>Hello client!</b>" );
 });
 

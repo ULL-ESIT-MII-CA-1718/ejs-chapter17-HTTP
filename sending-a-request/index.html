@@ -62,6 +62,17 @@
 
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       console.log(xhttp.statusText); // OK
+      /*
+         The getResponseHeader() method returns the
+         string containing the text of the specified header. If
+         there are multiple response headers with the same name,
+         then their values are returned as a single concatenated
+         string, where each value is separated from the previous
+         one by a pair of comma and space. The getResponseHeader()
+         method returns the value as a UTF byte sequence. The search
+         for the header name is case-insensitive.
+       */
+      console.log(xhttp.getResponseHeader("MyServerSetHeader")); // "Success is walking from failure to failure with no loss of enthusiasm"
       document.getElementById("demo").innerHTML = xhttp.responseText;
     }
   }
