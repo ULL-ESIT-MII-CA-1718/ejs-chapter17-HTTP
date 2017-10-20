@@ -48,8 +48,19 @@
        whether or not to perform the operation asynchronously. 
        If this value is false, the send()method does not return until
        the response is received. 
+       This is convenient because it means properties such as
+       responseText are available immediately. But it also means
+       that our program is suspended as long as the browser and
+       server are communicating. 
+       When the connection is bad, the server is slow, or the file is big, 
+       that might take quite a while. 
+       Worse, because no event handlers can fire while our
+       program is suspended, the whole document will become
+       unresponsive.
+
        If true, notification of a completed transaction is provided
        using event listeners. 
+
      */
 
     xhttp.open("GET", "xmlhttp_info.txt", true);
