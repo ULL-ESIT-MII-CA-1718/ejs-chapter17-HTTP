@@ -13,12 +13,6 @@ app.use(expressLayouts);
 
 app.use(express.static(__dirname));
 
-/*
-app.get('/', (request, response) => {     
-  response.render('index', { title: 'CSV Analyzer' });
-});
-*/
-
 app.get("/chuchu/xmlhttp_info.txt", (request, response) => {
   console.log(`request.get('chuchu') = ${request.get('chuchu')}`);  // Tutu!, Chazam!
   /* 
