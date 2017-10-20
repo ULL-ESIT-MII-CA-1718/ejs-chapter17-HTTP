@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Using the XMLHttpRequest Object</h2>
+  <div>
+    <pre id="demo">
+    </pre>
+  </div>
+  <button type="button" onclick="main()">Change Content</button>
+
+  <script type="text/javascript" src="escape-xml.js"></script>
+  <script>
+    function loadXMLFile() {
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.addEventListener("load", function() {
+        console.log(this.responseXML);
+        let s = new XMLSerializer();
+        let newXmlStr = s.serializeToString(this.responseXML);
+        document.getElementById("demo").innerHTML += "<br/>"+escapeXml(newXmlStr)+"<br/>";
+      });
+
+      xhttp.open("GET", "fruits.xml");
+      xhttp.send();
+    }
+
+    function loadXML() {
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.addEventListener("load", function() {
+        console.log(this.responseXML);
+        let s = new XMLSerializer();
+        let newXmlStr = s.serializeToString(this.responseXML);
+        document.getElementById("demo").innerHTML += "<br/>"+escapeXml(newXmlStr)+"<br/>";
+      });
+
+      xhttp.open("GET", "cats.xml");
+      xhttp.send();
+    }
+
+    function loadJSONFile() {
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.addEventListener("load", function() {
+        console.log(this.responseText);
+        console.log(JSON.parse(this.responseText));
+        document.getElementById("demo").innerHTML += this.responseText+"<br/>";
+      });
+
+      xhttp.open("GET", "fruits.json");
+      xhttp.send();
+    }
+
+    function loadJSON() {
+      var xhttp = new XMLHttpRequest();
+
+      xhttp.addEventListener("load", function() {
+        console.log(this.responseText);
+        console.log(JSON.parse(this.responseText));
+        document.getElementById("demo").innerHTML += this.responseText;
+      });
+
+      xhttp.open("GET", "cats.json");
+      xhttp.send();
+    }
+    let main = function() {
+      loadXMLFile();
+      loadXML();
+      loadJSONFile();
+      loadJSON();
+    }
+  </script>
+
+</body>
+</html>
+
