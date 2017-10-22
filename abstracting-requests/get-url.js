@@ -1,3 +1,12 @@
+/*
+   To handle failing requests, we have to allow an additional
+   function to be passed to our helper function and call it when a request
+   goes wrong. 
+   
+   We can use the convention that if the
+   request fails, an additional argument describing the problem is
+   passed to the callback 
+*/
 function getURL(url, callback) {
   var req = new XMLHttpRequest();
 
