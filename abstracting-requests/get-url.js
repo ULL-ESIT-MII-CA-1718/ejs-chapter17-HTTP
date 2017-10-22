@@ -6,6 +6,13 @@
    We can use the convention that if the
    request fails, an additional argument describing the problem is
    passed to the callback 
+
+   However, this does not help when it comes to exceptions. When
+   chaining several asynchronous actions together, an exception at
+   any point of the chain will still (unless you wrap each handling
+   function in its own try/catch block) land at the top level and
+   abort your chain of actions.
+
 */
 function getURL(url, callback) {
   var req = new XMLHttpRequest();
