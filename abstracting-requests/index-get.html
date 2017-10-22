@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" src="get-url.js"></script>
+  <script type="text/javascript">
+    getURL("README.md", function(content, error) {
+      if (error != null)
+        console.log("Failed to fetch README.md: " + error);
+      else
+        console.log("README.md: " + content);
+    });  
+  </script>
+  <script type="text/javascript">
+    getURL("data/nonsense.txt", function(content, error) {
+      if (error != null)
+        console.log("Failed to fetch nonsense.txt: " + error);
+      else
+        console.log("nonsense.txt: " + content);
+    });  
+  </script>
+</body>
+</html>

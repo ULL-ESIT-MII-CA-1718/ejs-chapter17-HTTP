@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" src="background-readfile.js"></script>
+  <script type="text/javascript">
+     /*
+        Error handling in asynchronous code is even trickier than error
+        handling in synchronous code. Because we often need to defer part
+        of our work, putting it in a callback function, the scope of a try
+        block becomes meaningless. In the following code, the exception
+        will not be caught because the call to backgroundReadFile returns
+        immediately. Control then leaves the try block, and the function
+        it was given won’t be called until later.
+     */
+     try {
+      backgroundReadFile("README.md", function(text) {
+        if (text != "expected")
+          throw new Error("That was unexpected");
+      });
+    } catch (e) { // Never executed
+      console.log("Hello from the catch block");
+    } 
+  </script>
+  <script type="text/javascript">
+     try {
+      // The file does'nt exists. 
+      backgroundReadFile("example/data.txt", function(text) {
+        if (text != "expected")
+          throw new Error("That was unexpected");
+      });
+    } catch (e) { // Never executed
+      console.log("Hello from the catch block");
+    } 
+  </script>
+</body>
+</html>
