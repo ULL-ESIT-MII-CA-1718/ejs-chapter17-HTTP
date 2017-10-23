@@ -203,10 +203,10 @@ are unable to read or modify any requests that they may intercept.
 
 * [How does HTTPS actually work?](http://robertheaton.com/2014/03/27/how-does-https-actually-work/) por Rob Heaton
 *  Introducción
-  - {% youtube %}https://youtu.be/JCvPnwpWVUQ{% endyoutube %}
+  - [https://youtu.be/JCvPnwpWVUQ](https://youtu.be/JCvPnwpWVUQ)
 
 * [SSL and HTTPS](https://youtu.be/S2iBR2ZlZf0) MIT OpenCourseWare
-  - {% youtube %}https://youtu.be/S2iBR2ZlZf0{% endyoutube %}
+  - [https://youtu.be/S2iBR2ZlZf0](https://youtu.be/S2iBR2ZlZf0)
   - MIT 6.858 Computer Systems Security, Fall 2014
   - View the complete course: [http://ocw.mit.edu/6-858F14](http://ocw.mit.edu/6-858F14)
   - Instructor: [Nickolai Zeldovich](https://www.youtube.com/user/chebureka)
