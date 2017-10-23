@@ -41,3 +41,6 @@ interface since resources are easier to reason about than a jumble
 of functions.
 
 See [Introducción a los servicios web RESTful](https://dosideas.com/noticias/java/314-introduccion-a-los-servicios-web-restful)
+There is a submodule repo in directory `node-api` corresponding to
+the repo [https://github.com/ULL-ESIT-MII-CA-1718/node-api](https://github.com/ULL-ESIT-MII-CA-1718/node-api). This repo contains
+the code corresponding to the aforementioned tutorial.
