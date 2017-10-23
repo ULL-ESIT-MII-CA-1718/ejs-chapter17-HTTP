@@ -17,7 +17,7 @@ function get(url) {
         fail(new Error("Request failed: " + req.statusText));
     });
     req.addEventListener("error", function() {
-      fail(new Error("Network error"));
+      fail(new Error("Network error while accessing "+url));
     });
     req.send(null);
   });

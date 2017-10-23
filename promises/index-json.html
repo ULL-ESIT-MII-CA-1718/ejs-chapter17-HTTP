@@ -21,13 +21,28 @@
      */
     function getJSON(url) {
       return get(url).then(JSON.parse); /* getJSON returns a promise! */
+      /*
+         That last call to then did not specify a failure handler.
+         This is allowed. The error will be passed to the promise
+         returned by `then`, which is exactly what we want: 
+           `getJSON` does not know what to do when something goes
+           wrong, but hopefully its caller (`get(url)`) does.
+       */
     }
     let info = getJSON("https://api.github.com/");
-    console.log("GitHub API info = -- %o\n--", info); /* A promise object! */
+    console.log("1 GitHub API info = -- %o\n--", info); /* A promise object! */
     info.then(
-        (x) => console.log("GitHub API info = -- %o+\n--",x); /* The JS object describing the GitHub API */ 
+        (x) => console.log("1 GitHub API info = -- %o+\n--",x) /* The JS object describing the GitHub API */ 
     ); 
   </script>
+  <script type="text/javascript">
+    let chuchu = getJSON("chuchu.json");
+    chuchu.then(
+        (x) => console.log("2 chuchu = -- %o+\n--",x) /* */ 
+    ).catch(
+        (e) => console.log("2 Catched!!! %o",e)
+      ); 
+    </script>
 </body>
 </html>
 
