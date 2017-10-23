@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" src="../get-url.js"></script>
+  <script type="text/javascript">
+    function getJSON(url) {
+      return get(url).then(JSON.parse); 
+    }
+  </script>
+  <script>
+    function showMessage(msg) {
+      var elt = document.createElement("div");
+      elt.textContent = msg;
+      return document.body.appendChild(elt);
+    }
+
+    var loading = showMessage("Loading...");
+    getJSON("bert").then(function(bert) {
+      return getJSON(bert.spouse);
+    }).then(function(spouse) {
+      return getJSON(spouse.mother);
+    }).then(function(mother) {
+      showMessage("The name is " + mother.name);
+      console.log("The name is " + mother.name);
+    }).catch(function(error) {
+      showMessage(String(error));
+    }).then(function() {
+      document.body.removeChild(loading);
+    });
+  </script>
+  <script type="text/javascript">
+  </script>
+</body>
+</html>
+
