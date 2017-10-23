@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" src="get-url.js"></script>
+  <script type="text/javascript">
+    function getJSON(url) {
+      return get(url).then(JSON.parse);
+    }
+    let info = getJSON("https://api.github.com/");
+    console.log("GitHub API info = -- %o\n--", info); /* A promise object! */
+    info.then((x) => console.log("GitHub API info = -- %o+\n--",x)); /* The JS object describing the GitHub API */ 
+  </script>
+</body>
+</html>
+
