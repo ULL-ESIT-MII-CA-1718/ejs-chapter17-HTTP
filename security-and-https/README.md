@@ -21,6 +21,12 @@ in a way that should prevent eavesdropping and tampering.
 ## SSL
 
 
+### Express 4 SSL Example
+
+* [http://blog.ayanray.com/2015/06/adding-https-ssl-to-express-4-x-applications/](http://blog.ayanray.com/2015/06/adding-https-ssl-to-express-4-x-applications/)
+* [Forked Repo](https://github.com/ULL-ESIT-MII-CA-1718/express4_SSL_example)
+
+
 ### How does HTTPS actually work?
 
 Esta sección es copia de:
