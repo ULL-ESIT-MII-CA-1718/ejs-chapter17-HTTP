@@ -1,3 +1,6 @@
 [submodule "appreciating-http/node-api"]
 	path = appreciating-http/node-api
 	url = https://github.com/ULL-ESIT-MII-CA-1718/node-api.git
+[submodule "security-and-https/express4_SSL_example"]
+	path = security-and-https/express4_SSL_example
+	url = git@github.com:ULL-ESIT-MII-CA-1718/express4_SSL_example.git
