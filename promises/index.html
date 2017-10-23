@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+  <script type="text/javascript" src="get-url.js"></script>
+  <script type="text/javascript">
+    get("README.md").then(function(text) {
+      console.log("README.md: " + text);
+      get("hello.txt").then(
+          (text) => console.log("hello.txt: " + text)
+          ,
+          (error) => console.log("Failed to fetch 'hello.txt'; "+error)
+       );
+    }, function(error) {
+      console.log("Failed to fetch README.md: " + error);
+    });
+  </script>
+  <script type="text/javascript">
+    get("chuchu.md").then(function(text) { /* chuchu.md does not exists */
+      console.log("chuchu.md: " + text);
+      get("hello.txt").then(
+          (text) => console.log("hello.txt: " + text)
+          ,
+          (error) => console.log("Failed to fetch 'hello.txt'; "+error)
+       );
+    }, function(error) {
+      console.log("Failed to fetch chuchu.md: " + error);
+    });
+  </script>
+  <script type="text/javascript">
+    get("README.md").then(function(text) {
+      console.log("README.md: " + text);
+      get("tutu.txt").then(
+          (text) => console.log("tutu.txt: " + text)
+          ,
+          (error) => console.log("Failed to fetch 'tutu.txt'; "+error)
+       );
+    }, function(error) {
+      console.log("Failed to fetch README.md: " + error);
+    });
+  </script>
+</body>
+</html>
