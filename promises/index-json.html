@@ -7,6 +7,18 @@
 <body>
   <script type="text/javascript" src="get-url.js"></script>
   <script type="text/javascript">
+    /* 
+       Calling `then` produces a new promise, whose result (the value
+       passed to success handlers) depends on the return value of
+       the first function we passed to then. 
+         When the handler function returns a nonpromise
+       value, the promise returned by then immediately succeeds
+       with that value as its result.
+
+       This means you can use `then` to transform the result of a
+       promise. For example, this returns a promise whose result
+       is the content of the given URL, parsed as JSON:
+     */
     function getJSON(url) {
       return get(url).then(JSON.parse);
     }
