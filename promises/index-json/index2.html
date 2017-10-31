@@ -19,18 +19,16 @@
     }
 
     var loading = showMessage("Loading...");
-    getJSON("bert").then(function(bert) {
-      return getJSON(bert.spouse);
-    }).then(function(spouse) {
-      return getJSON(spouse.mother);
-    }).then(function(mother) {
-      showMessage("The name is " + mother.name);
-      console.log("The name is " + mother.name);
-    }).catch(function(error) {
-      showMessage(String(error));
-    }).then(function() {
-      document.body.removeChild(loading);
-    });
+    getJSON("bert").then(
+        (bert) => getJSON(bert.spouse)).then
+          ((spouse) => getJSON(spouse.mother)).then(
+             (mother) => { 
+               showMessage("The name is " + mother.name);
+               console.log("The name is " + mother.name);
+             }
+          ).catch((error) => showMessage(String(error))).then(
+              () => document.body.removeChild(loading)
+          );
   </script>
 </body>
 </html>

@@ -14,7 +14,7 @@ app.use(expressLayouts);
 app.use(express.static(__dirname));
 
 app.get("/", (request, response) => {
-  res.redirect("/index5000.html");
+  response.redirect("/index5000.html");
 });
 
 app.get("/xmlhttp_info.txt", (request, response) => {
