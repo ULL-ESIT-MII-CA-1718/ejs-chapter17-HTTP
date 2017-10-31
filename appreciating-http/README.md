@@ -16,7 +16,10 @@ When thinking in terms of remote procedure calls, HTTP is just a
 vehicle for communication, and you will most likely write an
 abstraction layer that hides it entirely.
 
-See the `./jayson/` dir for an example.
+See the [`./jayson/`](https://github.com/ULL-ESIT-MII-CA-1718/ejs-chapter17-HTTP/tree/master/appreciating-http/jayson) dir for an example.
+
+* [Jayson is a simple but featureful JSON-RPC 2.0/1.0 client and server for node.js](https://github.com/tedeh/jayson)
+
 
 #### REST
 
@@ -40,7 +43,8 @@ a copy on the client side). It can also help the coherence of your
 interface since resources are easier to reason about than a jumble
 of functions.
 
-See [Introducción a los servicios web RESTful](https://dosideas.com/noticias/java/314-introduccion-a-los-servicios-web-restful)
+See [Introducción a los servicios web RESTful](https://dosideas.com/noticias/java/314-introduccion-a-los-servicios-web-restful).
+
 There is a submodule repo in directory `node-api` corresponding to
 the repo [https://github.com/ULL-ESIT-MII-CA-1718/node-api](https://github.com/ULL-ESIT-MII-CA-1718/node-api). This repo contains
 the code corresponding to the aforementioned tutorial.
